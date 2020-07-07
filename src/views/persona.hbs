@@ -1,0 +1,46 @@
+<h1>Generador de personas</h1>
+<div class="container text-center">
+    <div class="card" style="width: 18rem; margin:auto; margin-top:5em;">
+        <img src="{{objeto.foto}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{objeto.primerNombre}} {{objeto.last}}</h5>
+            <p class="card-text">{{objeto.email}} con DNI = {{objeto.uuid}}</p>
+            <form action="/agregar" method="POST">    
+                <input type="hidden" name="first" value="{{objeto.primerNombre}}">
+                <input type="hidden" name="last" value="{{objeto.last}}">
+                <input type="hidden" name="email" value="{{objeto.email}}">
+                <input type="hidden" name="uuid" value="{{objeto.uuid}}">
+                <input type="hidden" name="foto" value="{{objeto.foto}}">
+                <button type="submit" class="btn btn-primary">Añadir a mi db</button>
+            </form>
+            <a type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#exampleModal">
+                Ver info completa.
+            </a>
+            <a href="/generar" class="btn btn-danger">¡No!,genera otra persona</a>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

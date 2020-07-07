@@ -1,0 +1,18 @@
+<div class="container">
+
+    <div class="row " style="margin-right:10px  ">
+        {{#each people}}
+        <div class="col-4">
+        <div class="card text-center" style="width: 18rem;margin-top:5em;">
+            <img src="{{foto}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{first}} {{last}}</h5>
+                <p class="card-text">{{email}} con DNI = {{uuid}}</p>
+                <a href="/delete/{{_id}}" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+        </div>
+        {{/each}}
+        
+    </div>
+</div>
